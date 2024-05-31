@@ -402,3 +402,18 @@ main table tbody tr:last-child td {
 }
 
 /* =========RIGHT SECTION STARTED========= */
+
+
+
+
+/* =========FOOTER========= */
+.footer{
+    position: sticky;
+    text-align: center;
+    background: var(--COLOR-INFO-LIGHT);
+    bottom: 0;
+    padding: 1rem;
+}
+
+
+
