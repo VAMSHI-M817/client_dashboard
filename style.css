@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200&display=swap');
+
+/* ROOT-VARIABLES */
+:root {
+    --COLOR-PRIMARY: #7380EC;
+    --COLOR-DANGER: #FF7782;
+    --COLOR-SUCCESS: #41F1B6;
+    --COLOR-WARINING: #FFBB55;
+    --COLOR-WHITE: #FFF;
+    --COLOR-INFO-DARK: #7B8DA1;
+    --COLOR-INFO-LIGHT: #DCE1EB;
+    --COLOR-DARK: #363949;
+    --COLOR-LIGHT: rgbA(132, 139, 200, 0.18);
+    --COLOR-PRIMARY-VARIANT: #111E88;
+    --COLOR-DARK-VARIANT: #677483;
+    --COLOR-BACKGROUND: #F6F6F9;
+
+
+    --CARD-BORDER-RADIUS: 2rem;
+    --BORDER-RADIUS-1: 0.4rem;
+    --BORDER-RADIUS-2: 0.8rem;
+    --BORDER-RADIUS-3: 1.2rem;
+
+    --CARD-PADDING: 1.8rem;
+    --PADDING: 1.2rem;
+
+    --BOX-SHADOW: 0 2rem 3rem var(--COLOR-LIGHT);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: poppins, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    font-size: 0.88rem;
+    background-color: var(--COLOR-BACKGROUND);
+    user-select: none;
+    overflow-x: hidden;
+}
+
+.container {
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 23rem;
+}
+
+a {
+    color: var(--COLOR-DARK);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 0.87rem;
+}
+
+h4 {
+    font-size: 0.8rem;
+}
+
+h5 {
+    font-size: 0.75rem;
+}
+
+.profile-photo {
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.text-muted {
+    color: var(--COLOR-INFO-DARK);
+}
+
+p {
+    color: var(--COLOR-DARK);
+}
+
+b {
+    color: var(--COLOR-DARK);
+}
+
+.primary {
+    color: var(--COLOR-PRIMARY);
+}
+
+.warning {
+    color: var(--COLOR-WARINING);
+}
+
+.danger {
+    color: var(--COLOR-DANGER);
+}
+
+.success {
+    color: var(--COLOR-SUCCESS);
+}
+
+aside {
+    height: 100vh;
+}
+
+aside .close {
+    display: none;
+}
+
+aside .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    margin-top: 1.4rem;
+}
+
+aside .logo img {
+    height: 2rem;
+    width: 2rem;
+}
+
+aside .logo {
+    display: flex;
+    gap: 0.8rem;
+}
+
+
+/* =========================SIDEBAR========================== */
+
+aside .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 86vh;
+    position: relative;
+    top: 2rem;
+}
+
+aside .sidebar a {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    gap: 1rem;
+    position: relative;
+    height: 3.7rem;
+    color: var(--COLOR-INFO-DARK);
+    transition: all 300ms ease;
+}
+
+aside h3 {
+    font-weight: 500;
+}
+
+aside .sidebar span {
+    font-size: 1.3rem;
+}
+
+aside .sidebar a:last-child {
+    position: absolute;
+    width: 100%;
+    bottom: 2rem;
+}
+
+.sidebar a.active {
+    background-color: var(--COLOR-LIGHT);
+    color: var(--COLOR-PRIMARY);
+    margin-left: 0;
+}
+
+.sidebar a.active::before {
+    content: '';
+    width: 6px;
+    background-color: var(--COLOR-PRIMARY);
+    height: 100%;
+}
+
+.sidebar a.active span {
+    color: var(--COLOR-PRIMARY);
+    margin-left: calc(1rem - 6px);
+}
+
+aside .sidebar .message_count {
+    background: var(--COLOR-DANGER);
+    padding: 2px 10px;
+    font-size: 11px;
+    color: var(--COLOR-WHITE);
+    border-radius: var(--BORDER-RADIUS-1);
+}
+
+/* aside .sidebar a:active {
+    background-color: var(--COLOR-LIGHT);
+    color: var(--COLOR-PRIMARY);
+}
+
+aside .sidebar a:active::before {
+    content: "";
+    width: 6px;
+    height: 100%;
+    background-color: var(--COLOR-PRIMARY);
+} */
+
+
+
+aside .sidebar a:hover {
+    margin-left: 1rem;
+    color: var(--COLOR-PRIMARY);
+}
+
+/*====================ASIDE ENDED==================*/
+
+main {
+    margin-top: 1.6rem;
+}
+
+main .date {
+    display: inline-block;
+    background-color: var(--COLOR-LIGHT);
+    border-radius: var(--BORDER-RADIUS-1);
+    margin-top: 1rem;
+    padding: 0.6rem 1.6rem;
+}
+
+main .date input[type=date] {
+    background: transparent;
+    color: var(--COLOR-DARK);
+}
+
+/* PARENT-CONTAINER */
+main .insights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+
+main .insights>div {
+    background: var(--COLOR-WHITE);
+    padding: var(--CARD-PADDING);
+    border-radius: var(--CARD-BORDER-RADIUS);
+    margin-top: 1rem;
+    box-shadow: var(--BOX-SHADOW);
+    transition: all 300ms ease;
+}
+
+main .insights>div:hover {
+    box-shadow: none;
+}
+
+/* ICONS IN CARDS */
+main .insights>div span {
+    background: var(--COLOR-PRIMARY);
+    color: white;
+    padding: 0.6rem;
+    border-radius: 50%;
+}
+
+main .insights>.expenses span {
+    background: var(--COLOR-DANGER);
+}
+
+main .insights>.income span {
+    background: var(--COLOR-SUCCESS);
+}
+
+/* MIDDLE SECTION */
+main .insights>div .middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .insights h3 {
+    margin: 1rem 0 0.6rem;
+    font-size: 1rem;
+}
+
+/* PROGRESS-SECTION */
+main .insights .progress {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+/* SVG UNIVERSAL */
+main .insights svg {
+    height: 7rem;
+    width: 7rem;
+}
+
+/* SVG CIRCLE */
+main .insights svg circle {
+    fill: none;
+    stroke: var(--COLOR-PRIMARY);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 110;
+    stroke-dashoffset: 92;
+}
+
+main .insights .sales svg circle {
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .insights .expenses svg circle {
+    stroke-dashoffset: 20;
+    stroke-dasharray: 80;
+}
+
+main .insights .income svg circle {
+    stroke-dashoffset: 35;
+    stroke-dasharray: 110;
+
+}
+
+/* NUMBER PLACING */
+main .insights .progress .number {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* MSG PLACING */
+main .insights small {
+    margin-top: 1.6rem;
+    display: block;
+}
+
+/* =========RECENT ORDERS STARTED========= */
+main .recent-orders {
+    margin-top: 2rem;
+}
+
+main .recent-orders h2 {
+    margin-bottom: 1rem;
+}
+
+main .recent-orders table {
+    background: var(--COLOR-WHITE);
+    padding: var(--PADDING);
+    border-radius: var(--CARD-BORDER-RADIUS);
+    text-align: center;
+    width: 100%;
+    box-shadow: var(--BOX-SHADOW);
+    transition: all 300ms ease;
+    overflow: scroll;
+}
+
+main .recent-orders table:hover {
+    box-shadow: none;
+}
+
+main table tbody td {
+    height: 2.8rem;
+    border-bottom: 1px solid var(--COLOR-LIGHT);
+    color: var(--COLOR-DARK-VARIANT);
+}
+
+main table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.recent-orders a {
+    margin-top: 12px;
+    text-align: center;
+    display: block;
+}
+
+/* =========RIGHT SECTION STARTED========= */
